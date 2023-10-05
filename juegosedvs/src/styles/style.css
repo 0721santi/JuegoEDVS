@@ -1,0 +1,104 @@
+/* styles.css */
+
+/* Assuming this is the parent container */
+.container {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    align-items: center; /* Center items horizontally */
+  }
+.main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.juego{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.tabla{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.variables{
+    margin-top: 20px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.cuestionario{
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+}
+.pregunta{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.msg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+p{
+    color: white;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.respuestas{
+    width: 50%;
+}
+.contadores{
+    height: 30%;
+}
+table {
+  width: 20%;
+  border-collapse: collapse;
+}
+
+td, th {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+tr::after {
+  content: ''; /* Clear the row */
+  display: block;
+  clear: both;
+}
+
+/* Other styles for your components */
+h1 {
+  margin-top: 20px;
+  font-size: 30px;
+  color: aliceblue;
+}
+h2{
+  margin-top: 20px;
+  font-size: 20px;
+  color: aliceblue;
+}
+button {
+  background-color: transparent; /* Set background color to transparent */
+  border: none; /* Remove border */
+  padding: 0; /* Remove padding */
+  font-size: 20px;
+}
+button:hover{
+  size: 20px;
+  background-color: white;
+  border: 4px;
+}
+
+/* ... other styles ... */
+  
