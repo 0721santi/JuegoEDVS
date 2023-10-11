@@ -40,6 +40,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    right: 90px;
+}
+.pregunta h2{
+  font-size: 30px;
 }
 .msg{
     display: flex;
@@ -54,16 +59,38 @@ p{
 }
 .respuestas{
     width: 50%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+.respuestas table{
+  width: 100%;
+  display: flex;
+  align-content: center;
+}
+.respuestas button{
+  font-size: 30px;
+  text-align: center;
+}
+.respuestas tr{
+  border: 0px;
 }
 .contadores{
     height: 30%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.contadores h1{
+  font-size: 50px;
 }
 table {
   width: 20%;
   border-collapse: collapse;
 }
 
-td, th {
+td, th, tr {
   width: 25%;
   box-sizing: border-box;
   padding: 15px;
@@ -93,10 +120,13 @@ button {
   border: none; /* Remove border */
   padding: 0; /* Remove padding */
   font-size: 20px;
+  text-align: center;
+  color: white;
 }
 button:hover{
   size: 20px;
   background-color: white;
+  color: black;
   border: 4px;
 }
 

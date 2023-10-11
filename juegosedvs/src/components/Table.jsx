@@ -33,16 +33,20 @@ const TableWithData = () => {
     return rows;
   };
   const renderAnswers = () =>{
+    if(!clickedItemData || clickedItemData.length === 0){
+      return null;
+    }
     const col = [];
-    for(let i=1;i<=3;i++){
-        const item = clickedItemData[i];
-        col.push(
-            <tr key={item} colSpan="2"><button onClick={() => handleButtonClick(item)}>{item}</button></tr>
-        )
+    for(let i=1;i<=5;i++){
+      const item = clickedItemData[i];
+      col.push(
+          <tr key={item}><button onClick={() => checkAnswer(item)}>{item}</button></tr>
+      )
     }
     return col;
   }
   const handleButtonClick = (item) => {
+    document.getElementById("result").innerHTML = "";
     axios.get(`http://127.0.0.1:5001/api/preguntas/${item}`).then(response => {
         setClickedItemId(item);
         setClickedItemData(response.data[0]);
@@ -51,6 +55,18 @@ const TableWithData = () => {
         console.error('Error fetching item data:', error);
       });
   };
+  const checkAnswer = (item) => {
+    if(!clickedItemData || clickedItemData.length === 0){
+      return null;
+    }
+    const res = clickedItemData[6];
+    const answer = item ? parseInt(item.substring(0,1)): '';
+    if(answer === res){
+      document.getElementById("result").innerHTML = "RESPUESTA CORRECTA";
+    }else{
+      document.getElementById("result").innerHTML = "RESPUESTA INCORRECTA";
+    }
+  }
 
   return (
     <div class="main">
@@ -70,7 +86,7 @@ const TableWithData = () => {
                         {clickedItemData && (
                         <div class="msg">
                             <h1>Pregunta {clickedItemId}</h1>
-                            <p>{clickedItemData[0]}</p>
+                            <center><h2>{clickedItemData[0]}</h2></center>
                         </div>
                         )}
                     </div>
@@ -83,7 +99,7 @@ const TableWithData = () => {
                     </div>
                 </div>
                 <div class="contadores">
-
+                  <h1 id="result"></h1>
                 </div>
             </div>
         </div>

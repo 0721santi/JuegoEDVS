@@ -18,7 +18,7 @@ def connection():
 @app.route("/api/preguntas/<id>", methods=["GET"])
 def obtenerPreguntas(id):
     conn = connection()
-    query = f"Select pregunta, a, b, c, respuesta From juegoedvs.preguntas where (id = {id});"
+    query = f"Select pregunta, a, b, c, d, e, respuesta From juegoedvs.preguntas where (id = {id});"
     try:
         with conn.cursor() as cursor:
             cursor.execute(query)
